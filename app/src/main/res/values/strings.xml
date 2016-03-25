@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Metronome</string>
+    <string name="manual_mode_text">MANUAL MODE</string>
+    <string name="vibration_text">VIBRATION</string>
+    <string name="flash_text">FLASH</string>
+    <string name="sound_text">SOUND</string>
+    <string name="sound_texts">Sound</string>
+    <string name="SET_BMP_text">SET BPM YOU NEED BELOW</string>
+    <string name="bpm_text_default">100</string>
+    <string name="bpm">bpm</string>
+    <string name="indicator_text">INDICATOR</string>
+    <string name="start_text">START</string>
+</resources>

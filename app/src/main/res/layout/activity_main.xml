@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yuriy.harkusha.metronome.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="60.38dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/manual_mode_text"
+            android:textSize="@dimen/manual_mode_text_size" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="25.46dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_footer" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="13dp"
+                android:weightSum="3">
+
+                <ImageView
+                    android:id="@+id/imageView_vibration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_vibration_off" />
+
+                <ImageView
+                    android:id="@+id/imageView_flashlight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_flashlight_off" />
+
+                <ImageView
+                    android:id="@+id/imageView_sound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_sound_off" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/textView_vibration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/vibration_text"
+                    android:textColor="@color/colorForOff"
+                    android:textSize="@dimen/VSF_text" />
+
+                <TextView
+                    android:id="@+id/textView_flashlight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/flash_text"
+                    android:textColor="@color/colorForOff"
+                    android:textSize="@dimen/VSF_text" />
+
+                <TextView
+                    android:id="@+id/textView_sound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/sound_text"
+                    android:textColor="@color/colorForOff"
+                    android:textSize="@dimen/VSF_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <ToggleButton
+                    android:id="@+id/toggle_vibration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/toggle_button"
+                    android:onClick="onVibrationToggleClick"
+                    android:textOff=""
+                    android:textOn="" />
+
+                <ToggleButton
+                    android:id="@+id/toggle_flashlight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/toggle_button"
+                    android:onClick="onFlashlightToggleClick"
+                    android:textOff=""
+                    android:textOn="" />
+
+                <ToggleButton
+                    android:id="@+id/toggle_sound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/toggle_button"
+                    android:onClick="onSoundToggleClick"
+                    android:text="@string/sound_texts"
+                    android:textOff=""
+                    android:textOn="" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="37.1dp"
+            android:text="@string/SET_BMP_text"
+            android:textSize="@dimen/set_bmp_you_need_text_size" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/bpmEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true"
+                android:inputType="number"
+                android:maxLength="3"
+                android:text="@string/bpm_text_default"
+                android:textSize="@dimen/edit_text_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bpm"
+                android:textSize="@dimen/bpm_text_size" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="200dp"
+            android:paddingRight="200dp"
+            android:paddingTop="23.03dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_line" />
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminate="false"
+                android:max="200"
+
+                android:progress="100"
+                android:progressDrawable="@drawable/seek_bar_progress"
+                android:thumb="@drawable/seek_bar_control"
+                android:thumbOffset="10dp" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="23.03dp"
+            android:text="@string/indicator_text"
+            android:textSize="@dimen/indicator_text_size" />
+
+        <ImageView
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="27.01dp"
+            android:paddingTop="12.76dp"
+            android:src="@drawable/indicator_off" />
+
+        <Button
+            android:id="@+id/buttonStartStop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/start_button"
+            android:focusable="true"
+            android:onClick="startStopButtonClick"
+            android:text="@string/start_text"
+            android:textSize="@dimen/start_stop_button_text_size"
+            android:textColor="@color/colorForOn"/>
+    </LinearLayout>
+
+</LinearLayout>
