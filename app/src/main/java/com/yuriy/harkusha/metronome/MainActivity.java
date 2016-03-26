@@ -76,8 +76,11 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         intent.putExtra("soundOn", soundOn);
         startService(intent);
 
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.showSoftInput(editBPM, InputMethodManager.SHOW_IMPLICIT);
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 
     public void onClickStop() {
