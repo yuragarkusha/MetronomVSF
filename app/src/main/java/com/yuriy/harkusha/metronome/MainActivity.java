@@ -1,10 +1,14 @@
 package com.yuriy.harkusha.metronome;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -21,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     private EditText editBPM;
     private SeekBar seekBar;
     private int bpm;
+    private BroadcastReceiver receiver;
     private boolean vibrationOn = false;
     private boolean lightOn = false;
     private boolean soundOn = false;
@@ -52,6 +57,37 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
                 editBPM.setText(Integer.toString(bpm));
             }
         });
+        receiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                String message = intent.getStringExtra(MetronomeService.MESSAGE);
+                final ImageView indicator = (ImageView) findViewById(R.id.indicator);
+                if (message == "on") {
+                    indicator.setImageDrawable(getResources().getDrawable(R.drawable.indicator_on));
+
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        public void run() {
+                            indicator.setImageDrawable(getResources().getDrawable(R.drawable.indicator_off));
+                        }
+                    }, 100);
+                }
+            }
+        };
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LocalBroadcastManager.getInstance(this).registerReceiver((receiver),
+                new IntentFilter(MetronomeService.RESULT)
+        );
+    }
+
+    @Override
+    protected void onStop() {
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
+        super.onStop();
     }
 
     public void startStopButtonClick(View view) {
@@ -97,9 +133,6 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         Button button = (Button) findViewById(R.id.buttonStartStop);
         button.setText("STOP");
         button.setBackgroundDrawable(getResources().getDrawable(R.drawable.stop_button));
-
-        ImageView indicator = (ImageView) findViewById(R.id.indicator);
-        indicator.setImageDrawable(getResources().getDrawable(R.drawable.indicator_on));
     }
 
     public void applyFonts() {
@@ -138,9 +171,6 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         Button button = (Button) findViewById(R.id.buttonStartStop);
         button.setText("START");
         button.setBackgroundDrawable(getResources().getDrawable(R.drawable.start_button));
-
-        ImageView indicator = (ImageView) findViewById(R.id.indicator);
-        indicator.setImageDrawable(getResources().getDrawable(R.drawable.indicator_off));
     }
 
     @Override

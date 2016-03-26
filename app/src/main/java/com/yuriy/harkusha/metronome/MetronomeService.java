@@ -9,14 +9,14 @@ import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
-import android.widget.Toast;
+import android.support.v4.content.LocalBroadcastManager;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class MetronomeService extends Service {
-
-
+    static final public String MESSAGE = "com.yuriy.harkusha.metronome.MetronomeService.MSG";
+    static final public String RESULT = "com.yuriy.harkusha.metronome.MetronomeService.RSLT";
     public Context context = this;
     private boolean status;
     private int bpm;
@@ -26,9 +26,11 @@ public class MetronomeService extends Service {
     private boolean soundOn;
     private int vibrationDuration = 100;
     private boolean serviceStatus;
+    private LocalBroadcastManager broadcaster;
 
     public void onCreate() {
         serviceStatus = true;
+        broadcaster = LocalBroadcastManager.getInstance(this);
     }
 
     public void onDestroy() {
@@ -41,6 +43,7 @@ public class MetronomeService extends Service {
             @Override
             public void run() {
                 if (serviceStatus) {
+                    sendSignalOnIndicator("on");
                     if (soundOn) {
                         sound();
                     }
@@ -129,5 +132,12 @@ public class MetronomeService extends Service {
         vibrationOn = settings.getBoolean("vibrationOn", false);
         lightOn = settings.getBoolean("lightOn", false);
         soundOn = settings.getBoolean("soundOn", false);
+    }
+
+    public void sendSignalOnIndicator(String message) {
+        Intent intent = new Intent(RESULT);
+        if (message != null)
+            intent.putExtra(MESSAGE, message);
+        broadcaster.sendBroadcast(intent);
     }
 }
