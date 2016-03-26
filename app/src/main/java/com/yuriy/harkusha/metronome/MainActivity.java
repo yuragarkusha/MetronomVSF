@@ -3,6 +3,7 @@ package com.yuriy.harkusha.metronome;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        applyFonts();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         seekBar = (SeekBar) findViewById(R.id.seekBar);
         editBPM = (EditText) findViewById(R.id.bpmEditText);
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         });
 
     }
+
     public void startStopButtonClick(View view) {
         if (!serviceIsWork) {
             onClickStart();
@@ -78,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
         View view = this.getCurrentFocus();
         if (view != null) {
-            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
@@ -96,6 +99,38 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 
         ImageView indicator = (ImageView) findViewById(R.id.indicator);
         indicator.setImageDrawable(getResources().getDrawable(R.drawable.indicator_on));
+    }
+
+    public void applyFonts() {
+        String museoSans100 = "fonts/museoSans100.otf";
+        String museoSans300 = "fonts/museoSans300.otf";
+        String museoSans500 = "fonts/museosans-500.otf";
+        String museoSans700 = "fonts/museoSans700.otf";
+
+        TextView manualModeTextView = (TextView) findViewById(R.id.manual_mode_textView);
+        TextView vibrationTextView = (TextView) findViewById(R.id.textView_vibration);
+        TextView flashlightTextView = (TextView) findViewById(R.id.textView_flashlight);
+        TextView soundTextView = (TextView) findViewById(R.id.textView_sound);
+        TextView setBpmTextView = (TextView) findViewById(R.id.textView_set_bpm);
+        EditText bpmEditText = (EditText) findViewById(R.id.bpmEditText);
+        TextView bpmTextView = (TextView) findViewById(R.id.textView_bpm);
+        TextView indicatorTextView = (TextView) findViewById(R.id.textView_indicator);
+        Button buttonStartStop = (Button) findViewById(R.id.buttonStartStop);
+
+        Typeface ms100 = Typeface.createFromAsset(getAssets(), museoSans100);
+        Typeface ms300 = Typeface.createFromAsset(getAssets(), museoSans300);
+        Typeface ms500 = Typeface.createFromAsset(getAssets(), museoSans500);
+        Typeface ms700 = Typeface.createFromAsset(getAssets(), museoSans700);
+
+        manualModeTextView.setTypeface(ms500);
+        vibrationTextView.setTypeface(ms500);
+        flashlightTextView.setTypeface(ms500);
+        soundTextView.setTypeface(ms500);
+        setBpmTextView.setTypeface(ms100);
+        bpmEditText.setTypeface(ms300);
+        bpmTextView.setTypeface(ms300);
+        indicatorTextView.setTypeface(ms500);
+        buttonStartStop.setTypeface(ms700);
     }
 
     public void updateElementsAfterStopService() {

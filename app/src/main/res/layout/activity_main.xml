@@ -14,6 +14,7 @@
         android:paddingTop="60dp">
 
         <TextView
+            android:id="@+id/manual_mode_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -150,13 +151,13 @@
                     android:layout_weight="1"
                     android:background="@drawable/toggle_button"
                     android:onClick="onSoundToggleClick"
-                    android:text="@string/sound_texts"
                     android:textOff=""
                     android:textOn="" />
             </LinearLayout>
         </FrameLayout>
 
         <TextView
+            android:id="@+id/textView_set_bpm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -182,6 +183,7 @@
                 android:textSize="@dimen/edit_text_size" />
 
             <TextView
+                android:id="@+id/textView_bpm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/bpm"
@@ -192,7 +194,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-
             android:paddingTop="23.03dp">
 
             <ImageView
@@ -208,7 +209,6 @@
                 android:layout_gravity="center"
                 android:indeterminate="false"
                 android:max="200"
-
                 android:progress="100"
                 android:progressDrawable="@drawable/seek_bar_progress"
                 android:thumb="@drawable/seek_bar_control"
@@ -216,6 +216,7 @@
         </FrameLayout>
 
         <TextView
+            android:id="@+id/textView_indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
