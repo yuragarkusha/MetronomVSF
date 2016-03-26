@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="vertical"
-        android:paddingTop="60.38dp">
+        android:paddingTop="60dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:paddingTop="25.46dp">
+            android:paddingTop="25dp">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -150,7 +150,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:paddingTop="37.1dp"
+            android:paddingTop="37dp"
             android:text="@string/SET_BMP_text"
             android:textSize="@dimen/set_bmp_you_need_text_size" />
 
@@ -182,19 +182,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:paddingLeft="200dp"
-            android:paddingRight="200dp"
+
             android:paddingTop="23.03dp">
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="413dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_line" />
 
             <SeekBar
                 android:id="@+id/seekBar"
-                android:layout_width="match_parent"
+                android:layout_width="413dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:indeterminate="false"
@@ -232,8 +231,8 @@
             android:focusable="true"
             android:onClick="startStopButtonClick"
             android:text="@string/start_text"
-            android:textSize="@dimen/start_stop_button_text_size"
-            android:textColor="@color/colorForOn"/>
+            android:textColor="@color/colorForOn"
+            android:textSize="@dimen/start_stop_button_text_size" />
     </LinearLayout>
 
 </LinearLayout>
