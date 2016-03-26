@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
                 editBPM.setText(Integer.toString(bpm));
             }
         });
-
     }
 
     public void startStopButtonClick(View view) {
@@ -71,7 +70,9 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         int getText = (Integer.parseInt(String.valueOf(editBPM.getText())));
         if (getText > 200) {
             getText = 200;
+            editBPM.setText(Integer.toString(200));
         }
+        seekBar.setProgress(getText);
         bpm = getText;
         intent.putExtra("bpm", bpm);
         intent.putExtra("vibrationOn", vibrationOn);
