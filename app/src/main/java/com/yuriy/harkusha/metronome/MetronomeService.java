@@ -28,14 +28,10 @@ public class MetronomeService extends Service {
     private boolean serviceStatus;
 
     public void onCreate() {
-        Toast.makeText(this, "Служба создана",
-                Toast.LENGTH_SHORT).show();
         serviceStatus = true;
     }
 
     public void onDestroy() {
-        Toast.makeText(this, "Служба остановлена",
-                Toast.LENGTH_SHORT).show();
         serviceStatus = false;
     }
 
