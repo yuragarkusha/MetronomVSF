@@ -196,11 +196,40 @@
             android:layout_gravity="center_vertical"
             android:paddingTop="23.03dp">
 
-            <ImageView
+            <RelativeLayout
                 android:layout_width="413dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_line" />
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/line"
+                    android:layout_width="413dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_line" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/line"
+                    android:layout_alignParentLeft="@+id/line"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/minus"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/line"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/plus"
+                    android:textSize="23sp" />
+            </RelativeLayout>
 
             <SeekBar
                 android:id="@+id/seekBar"
