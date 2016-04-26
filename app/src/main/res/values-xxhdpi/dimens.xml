@@ -1,7 +1,7 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">12dp</dimen>
+    <dimen name="activity_vertical_margin">12dp</dimen>
     <dimen name="manual_mode_text_size">20sp</dimen>
     <dimen name="VSF_text">13sp</dimen>
     <dimen name="set_bmp_you_need_text_size">20sp</dimen>
@@ -9,4 +9,16 @@
     <dimen name="bpm_text_size">20sp</dimen>
     <dimen name="indicator_text_size">20sp</dimen>
     <dimen name="start_stop_button_text_size">15sp</dimen>
+    <dimen name="TopLinearLayoutPaddingTop">45dp</dimen>
+    <dimen name="FrameWith3IconsPaddingTop">18.75dp</dimen>
+    <dimen name="Linear3IconsPaddingTop">9.75dp</dimen>
+    <dimen name="TextViewVibrationPaddingBottom">11.25dp</dimen>
+    <dimen name="TextViewFlashlightPaddingBottom">11.25dp</dimen>
+    <dimen name="TextViewSoundPaddingBottom">11.25dp</dimen>
+    <dimen name="FrameWithSickBarPaddingTop">17.25dp</dimen>
+    <dimen name="SeekBarImageWidth">309.75dp</dimen>
+    <dimen name="SeekBarThumbOffset">7.5dp</dimen>
+    <dimen name="IndicatorTVPaddingTop">17.25dp</dimen>
+    <dimen name="IndicatorPaddingBottom">20.25dp</dimen>
+    <dimen name="IndicatorPaddingTop">9.75dp</dimen>
 </resources>

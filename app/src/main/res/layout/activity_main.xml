@@ -5,13 +5,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.yuriy.harkusha.metronome.MainActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="vertical"
-        android:paddingTop="60dp">
+        android:paddingTop="@dimen/TopLinearLayoutPaddingTop">
 
         <TextView
             android:id="@+id/manual_mode_textView"
@@ -25,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:paddingTop="25dp">
+            android:paddingTop="@dimen/FrameWith3IconsPaddingTop">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -36,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:paddingTop="13dp"
+                android:paddingTop="@dimen/Linear3IconsPaddingTop"
                 android:weightSum="3">
 
                 <FrameLayout
@@ -58,7 +57,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|center_horizontal"
                         android:gravity="center"
-                        android:paddingBottom="15dp"
+                        android:paddingBottom="@dimen/TextViewVibrationPaddingBottom"
                         android:text="@string/vibration_text"
                         android:textColor="@color/colorForOff"
                         android:textSize="@dimen/VSF_text" />
@@ -83,7 +82,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|center_horizontal"
                         android:gravity="center"
-                        android:paddingBottom="15dp"
+                        android:paddingBottom="@dimen/TextViewFlashlightPaddingBottom"
                         android:text="@string/flash_text"
                         android:textColor="@color/colorForOff"
                         android:textSize="@dimen/VSF_text" />
@@ -108,7 +107,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|center_horizontal"
                         android:gravity="center"
-                        android:paddingBottom="15dp"
+                        android:paddingBottom="@dimen/TextViewSoundPaddingBottom"
                         android:text="@string/sound_text"
                         android:textColor="@color/colorForOff"
                         android:textSize="@dimen/VSF_text" />
@@ -194,46 +193,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:paddingTop="23.03dp">
+            android:paddingTop="@dimen/FrameWithSickBarPaddingTop">
 
             <RelativeLayout
-                android:layout_width="413dp"
+                android:layout_width="@dimen/SeekBarImageWidth"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center">
 
                 <ImageView
                     android:id="@+id/line"
-                    android:layout_width="413dp"
+                    android:layout_width="@dimen/SeekBarImageWidth"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_line" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/line"
-                    android:layout_alignParentLeft="@+id/line"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:text="@string/minus"
-                    android:textSize="23sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignRight="@+id/line"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerInParent="true"
-                    android:layout_centerVertical="true"
-                    android:text="@string/plus"
-                    android:textSize="23sp" />
             </RelativeLayout>
 
             <SeekBar
                 android:id="@+id/seekBar"
-                android:layout_width="413dp"
+                android:layout_width="@dimen/SeekBarImageWidth"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:indeterminate="false"
@@ -241,7 +220,7 @@
                 android:progress="100"
                 android:progressDrawable="@drawable/seek_bar_progress"
                 android:thumb="@drawable/seek_bar_control"
-                android:thumbOffset="10dp" />
+                android:thumbOffset="@dimen/SeekBarThumbOffset" />
         </FrameLayout>
 
         <TextView
@@ -249,7 +228,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:paddingTop="23.03dp"
+            android:paddingTop="@dimen/IndicatorTVPaddingTop"
             android:text="@string/indicator_text"
             android:textSize="@dimen/indicator_text_size" />
 
@@ -258,8 +237,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:paddingBottom="27.01dp"
-            android:paddingTop="12.76dp"
+            android:paddingBottom="@dimen/IndicatorPaddingBottom"
+            android:paddingTop="@dimen/IndicatorPaddingTop"
             android:src="@drawable/indicator_off" />
 
         <Button
