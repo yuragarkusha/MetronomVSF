@@ -16,7 +16,7 @@
     <dimen name="TextViewFlashlightPaddingBottom">7.5dp</dimen>
     <dimen name="TextViewSoundPaddingBottom">7.5dp</dimen>
     <dimen name="FrameWithSickBarPaddingTop">11.5dp</dimen>
-    <dimen name="SeekBarImageWidth">206.5dp</dimen>
+    <dimen name="SeekBarImageWidth">330dp</dimen>
     <dimen name="SeekBarThumbOffset">5dp</dimen>
     <dimen name="IndicatorTVPaddingTop">11.5dp</dimen>
     <dimen name="IndicatorPaddingBottom">13.5dp</dimen>
